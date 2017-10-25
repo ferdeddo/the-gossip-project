@@ -1,0 +1,28 @@
+<h1>Gossip mutation</h1>
+<%= form_for @gossip do |f| %>
+  <% if @gossip.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@gossip.errors.count, "error") %> prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @gossip.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :anonymous_author, "Anonymous Author" %>
+    <br>
+    <%= f.text_field :anonymous_author %>
+    <br>
+    <%= f.text_area :content %>
+    <br>
+    <%= f.submit "Mutate!" %>
+  </p>
+<% end %>
+<%= link_to "Home", root_path %>
+<%= link_to 'Clique pour détruire', @gossip, method: :delete %>

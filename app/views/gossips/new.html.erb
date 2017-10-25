@@ -1,0 +1,10 @@
+<h1>New Gossip</h1>
+<%= form_for @gossip do |f| %>
+  <%= f.label :anonymous_author, "Anonymous Author" %>
+  <br>
+  <%= f.text_field :anonymous_author %>
+  <br>
+  <%= f.text_area :content %>
+  <br>
+  <%= f.submit "Gossip!" %>
+<% end %>

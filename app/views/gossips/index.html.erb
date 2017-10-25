@@ -1,0 +1,9 @@
+<h1>Wesh!</h1>
+<ul>
+  <% @gossip.each do |g| %>
+    <li><%= g[:id] %></li>
+    <li><%= g[:anonymous_author] %></li>
+    <li><%= g[:content] %></li>
+  <% end %>
+</ul>
+<%= link_to "New Gossip", new_gossip_path %>
